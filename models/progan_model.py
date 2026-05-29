@@ -225,7 +225,7 @@ class ProGanModel(BaseModel):
             basic_weights = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1])
         basic_weights = basic_weights[:self.max_steps + 1]
         epochs_schedule = self.total_steps * basic_weights / np.sum(basic_weights)
-        epochs_schedule = epochs_schedule.astype(np.int)
+        epochs_schedule = epochs_schedule.astype(np.int32)
         print('schedule of step turning: %s' % str(epochs_schedule))
         return epochs_schedule
 
